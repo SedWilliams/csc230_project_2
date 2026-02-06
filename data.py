@@ -107,6 +107,11 @@ Y_train = np.array([
     4500900
 ])
 
+Y_train = Y_train.reshape(-1, 1)
+print(Y_train.shape)
+
+#print(Y_train)
+
 # [0, 1, 2, 3] -> square ft, rooms, parking, price
 og_dataset = [
  [2000, 5, 1, 2804500],
