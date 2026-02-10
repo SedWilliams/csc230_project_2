@@ -1,5 +1,7 @@
 import numpy as np
 
+# [0, 1, 2] -> square ft, rooms, parking
+# individual house features
 X_train = np.array([
  [2000, 5, 1],
  [2000, 4, 1],
@@ -107,10 +109,10 @@ Y_train = np.array([
     4500900
 ])
 
+#this reformats the output data (prices) to be an
+# Nx1 matrix (or vector rather)
 Y_train = Y_train.reshape(-1, 1)
 print(Y_train.shape)
-
-#print(Y_train)
 
 # [0, 1, 2, 3] -> square ft, rooms, parking, price
 og_dataset = [
