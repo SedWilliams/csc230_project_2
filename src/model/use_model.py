@@ -1,9 +1,9 @@
 import numpy as np
 import tensorflow as tf
 
-import data
-import get_new_test_case
-import save_and_load_model as save_or_load
+from src.data import data
+from src.util import get_new_test_case
+from src.model import save_and_load_model as save_or_load
 
 """
 Model Training
@@ -58,7 +58,9 @@ This function calls for user input on a house listing, and
 """
 def predict_price():
     # get the model
-    model = save_or_load.load_model("house_price_model.keras")
+    model = save_or_load.load_model(
+            "src/stored_model/house_price_model.keras"
+            )
 
     #collect input from user about the new house listing
     new_house_features, actual_market_price = get_new_test_case.get()

@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-import data
-import use_model
+from src.data import data
+from src.model import use_model
 
 
 """
@@ -49,6 +49,6 @@ new_model.compile(
 
 use_model.train_model(new_model, data)
 
-new_model.save("house_price_model.keras")
+new_model.save("src/stored_model/house_price_model.keras")
 
 
