@@ -2,7 +2,7 @@
 
 ### MODULES
 * [README](#readme)
-* [data.py](#data-py)
+* [data.py](data.py)
 
 
 
