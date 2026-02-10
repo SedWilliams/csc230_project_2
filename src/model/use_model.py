@@ -1,9 +1,14 @@
 import numpy as np
 import tensorflow as tf
 
+from pathlib import Path
+
 from src.data import data
 from src.util import get_new_test_case
 from src.model import save_and_load_model as save_or_load
+
+_SRC_DIR = Path(__file__).resolve().parents[1]
+_MODEL_PATH = _SRC_DIR / "stored_model" / "house_price_model.keras"
 
 """
 Model Training
@@ -58,9 +63,7 @@ This function calls for user input on a house listing, and
 """
 def predict_price():
     # get the model
-    model = save_or_load.load_model(
-            "src/stored_model/house_price_model.keras"
-            )
+    model = save_or_load.load_model(str(_MODEL_PATH))
 
     #collect input from user about the new house listing
     new_house_features, actual_market_price = get_new_test_case.get()

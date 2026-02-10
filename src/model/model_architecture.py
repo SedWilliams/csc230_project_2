@@ -1,5 +1,7 @@
 import tensorflow as tf
 
+from pathlib import Path
+
 from src.data import data
 from src.model import use_model
 
@@ -49,6 +51,8 @@ new_model.compile(
 
 use_model.train_model(new_model, data)
 
-new_model.save("src/stored_model/house_price_model.keras")
+src_dir = Path(__file__).resolve().parents[1]
+model_path = src_dir / "stored_model" / "house_price_model.keras"
+new_model.save(str(model_path))
 
 
