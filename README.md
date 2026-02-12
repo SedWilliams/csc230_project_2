@@ -25,4 +25,4 @@
     * Trains the model and predicts/denormalizes prices for new inputs.
     * Functions: `train_model()`, `denormalize_price_output()`, `predict_price()`
 
-
+main <- ml_test
